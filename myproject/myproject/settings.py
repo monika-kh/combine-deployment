@@ -152,3 +152,7 @@ AWS_DEFAULT_ACL =  None
 AWS_S3_VERITY = True
 # AWS_S3_ENDPOINT_URL = fhttps://AWS_STORAGE_BUCKET_NAME.s3.AWS_S3_REGION_NAME.amazonaws.com
 DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+import os
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__)) 
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
