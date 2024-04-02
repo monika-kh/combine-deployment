@@ -86,10 +86,10 @@ WSGI_APPLICATION = "myproject.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'mydatabase',
-        'USER': 'mydatabaseuser',
-        'PASSWORD': 'mypassword',
-        'HOST': 'myrdshost.rds.amazonaws.com',
+        'NAME': 'combine_deployment_db_instance',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'combine-deployment-db-instance.ctqsm202cdb1.us-east-1.rds.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -142,3 +142,13 @@ CORS_ORIGIN_WHITELIST = [
 ]
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_CREDENTIALS = True
+
+AWS_ACCESS_KEY_ID = "AKIAU3QTYTQYMPQD4MUZ"
+AWS_SECRET_ACCESS_KEY = "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"
+AWS_STORAGE_BUCKET_NAME = "combine-deployment-app"
+AWS_S3_REGION_NAME = "us-east-1"
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+# AWS_S3_ENDPOINT_URL = fhttps://AWS_STORAGE_BUCKET_NAME.s3.AWS_S3_REGION_NAME.amazonaws.com
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
